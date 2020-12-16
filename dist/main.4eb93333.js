@@ -11256,14 +11256,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var $tabBar = (0, _jquery.default)("#app2 .tab-bar");
 var $tabContent = (0, _jquery.default)("#app2 .tab-content");
+var localKey = 'app2-index';
+var index = localStorage.getItem(localKey) || 0;
 $tabBar.on('click', "li", function (e) {
   var $li = (0, _jquery.default)(e.currentTarget);
   var index = $li.index();
+  localStorage.setItem(localKey, index);
   $li.addClass('selected').siblings().removeClass('selected');
   $tabContent.children().eq(index).addClass('active').siblings().removeClass('active');
 }); //设置一开始就点击一次
 
-$tabBar.children().eq(0).trigger('click');
+$tabBar.children().eq(index).trigger('click');
 },{"../css/app2.css":"AQoi","jquery":"juYr"}],"CHY8":[function(require,module,exports) {
 "use strict";
 
@@ -11274,8 +11277,22 @@ require("../css/app3.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var $square = (0, _jquery.default)("#app3 .square");
+var localKey = "app3-active";
+var active = localStorage.getItem(localKey) === 'yes'; // if (active) {
+//     $square.addClass('active')
+// } else {
+//     $square.removeClass('active')
+// }
+
+$square.toggleClass('active', active);
 $square.on("click", function () {
-  $square.toggleClass('active');
+  if ($square.hasClass('active')) {
+    $square.removeClass('active');
+    localStorage.setItem(localKey, 'no');
+  } else {
+    $square.addClass('active');
+    localStorage.setItem(localKey, 'yes');
+  }
 });
 },{"jquery":"juYr","../css/app3.css":"AQoi"}],"qLTF":[function(require,module,exports) {
 "use strict";
@@ -11307,4 +11324,4 @@ require("./js/app3.js");
 
 require("./js/app4.js");
 },{"./reset.css":"AQoi","./global.css":"AQoi","./js/app1.js":"Rdxg","./js/app2.js":"QsWc","./js/app3.js":"CHY8","./js/app4.js":"qLTF"}]},{},["epB2"], null)
-//# sourceMappingURL=main.ae25ba3f.js.map
+//# sourceMappingURL=main.4eb93333.js.map
