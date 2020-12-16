@@ -1,4 +1,6 @@
-#app4 {}
+#app4 {
+    padding: 10px;
+}
 
 @keyframes change {
     0% {
@@ -11,8 +13,8 @@
 }
 
 #app4 .circle {
-    width: 30vw;
-    height: 30vh;
+    width: 20vw;
+    height: 20vw;
     border-radius: 50%;
     background-color: rgb(221, 33, 33);
 }
