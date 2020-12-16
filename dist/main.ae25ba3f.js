@@ -11224,21 +11224,25 @@ $number.text(n || 100);
 $button1.on('click', function () {
   var n = parseInt($number.text());
   n += 1;
+  localStorage.setItem("n", n);
   $number.text(n);
 });
 $button2.on('click', function () {
   var n = parseInt($number.text());
   n -= 1;
+  localStorage.setItem("n", n);
   $number.text(n);
 });
 $button3.on('click', function () {
   var n = parseInt($number.text());
   n *= 2;
+  localStorage.setItem("n", n);
   $number.text(n);
 });
 $button4.on('click', function () {
   var n = parseInt($number.text());
   n /= 2;
+  localStorage.setItem("n", n);
   $number.text(n);
 });
 },{"../css/app1.css":"AQoi","jquery":"juYr"}],"QsWc":[function(require,module,exports) {
@@ -11303,4 +11307,4 @@ require("./js/app3.js");
 
 require("./js/app4.js");
 },{"./reset.css":"AQoi","./global.css":"AQoi","./js/app1.js":"Rdxg","./js/app2.js":"QsWc","./js/app3.js":"CHY8","./js/app4.js":"qLTF"}]},{},["epB2"], null)
-//# sourceMappingURL=main.437f9a51.js.map
+//# sourceMappingURL=main.ae25ba3f.js.map
